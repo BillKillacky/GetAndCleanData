@@ -20,16 +20,41 @@ getwd()
 # C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test
 # 3:  X_train.txt y_train.txt subject_train.txt
 #
-fileUrl_features <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/features.txt"
-fileUrl_activity_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/activity_labels.txt"
+#fileUrl_features <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/features.txt"
+#fileUrl_activity_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/activity_labels.txt"
 
-fileUrlxtest_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/X_test.txt"
-fileUrlytest_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/y_test.txt"
-fileUrlytest_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/subject_test.txt"
+#fileUrlxtest_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/X_test.txt"
+#fileUrlytest_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/y_test.txt"
+#fileUrlytest_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/test/subject_test.txt"
 
-fileUrlxtrain_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/X_train.txt"
-fileUrlytrain_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/y_train.txt"
-fileUrlytrain_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/subject_train.txt"
+#fileUrlxtrain_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/X_train.txt"
+#fileUrlytrain_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/y_train.txt"
+#fileUrlytrain_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train/subject_train.txt"
+#
+#----- The code should have a file run_analysis.R in the main directory 
+#----- that can be run as long as the Samsung data is in your working directory.
+#
+#fileUrl_features <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/features.txt"
+#fileUrl_activity_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/activity_labels.txt"
+#
+#fileUrlxtest_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/X_test.txt"
+#fileUrlytest_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/y_test.txt"
+#fileUrlytest_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/subject_test.txt"
+#
+#fileUrlxtrain_dataset <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/X_train.txt"
+#fileUrlytrain_labels <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/y_train.txt"
+#fileUrlytrain_subject <- "C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/subject_train.txt"
+
+fileUrl_features <- "features.txt"
+fileUrl_activity_labels <- "activity_labels.txt"
+
+fileUrlxtest_dataset <- "X_test.txt"
+fileUrlytest_labels <- "y_test.txt"
+fileUrlytest_subject <- "subject_test.txt"
+
+fileUrlxtrain_dataset <- "X_train.txt"
+fileUrlytrain_labels <- "y_train.txt"
+fileUrlytrain_subject <- "subject_train.txt"
 
 #--------------------------------------------------------------------------
 # 1.  Merges the training and the test sets to create one data set.
@@ -183,8 +208,8 @@ nrow(trainYa) + nrow(testYa)
 allDF <- rbind(trainDF, testDF)
 head(allDF, n=1)
 # read.table(fileUrlxtrain_dataset, header=FALSE, sep="", stringsAsFactors=F, na.strings="?")
-#write.csv(allDF, file = "BothTrainTestA.csv")
-write.table(allDF, file = "BothTrainTestA.txt", sep="\t")
+##write.csv(allDF, file = "BothTrainTestA.csv")
+#write.table(allDF, file = "BothTrainTestA.txt", sep="\t")
 #---------------------
 
 #--------------------------------------------------------------------------
@@ -208,7 +233,7 @@ fsub
 tail(fsub, n=2)
 
 fsub
-fsub$fcolName = paste('V',fsub$fvID, sep="")
+fsub$fcolName = paste('V',fsub$fvID, sep="")     #create a new column fcolName: V1 or v41 or v543
 fsub
 nrow(fsub)
 
@@ -225,9 +250,9 @@ colnames(tidyDF1) <- c("Source", "Subject", "Activity")
 names(tidyDF1)
 
 #tidyDF2 <- subset(allDF, select = tsub)
-tidyDF2 <- subset(allDF, select = fsub$fcolName)
+tidyDF2 <- subset(allDF, select = fsub$fcolName)  #include only columns with mean or std variables
 names(tidyDF2)
-colnames(tidyDF2) <- fsub$fvDesc
+colnames(tidyDF2) <- fsub$fvDesc     #convert to colnames from v1 to tBodyAcc-mean()-x for subset 66 of 541 columns
 names(tidyDF2)
 
 tidyDFdetail <- data.frame(tidyDF1, tidyDF2)
@@ -235,6 +260,21 @@ names(tidyDFdetail)
 tail(tidyDFdetail, n=2)
 dim(tidyDFdetail)
 names(tidyDFdetail)
+colnames(tidyDFdetail)
+
+colnames(tidyDF2)[2]   
+n <- dim(tidyDFdetail)[2]    #n = number of columns
+for (i in 1:n) {
+  print(paste(i, colnames(tidyDFdetail)[i]) )
+}
+tail(tidyDFdetail, n=1)
+tidyDFdetail[10299,69]
+n <- dim(tidyDFdetail)[1]    #n = number of rows/obs
+n <- dim(tidyDFdetail)[2]    #n = number of columns
+for (i in 1:n) {
+  #print(paste(i, colnames(tidyDFdetail)[i], tidyDFdetail[10299, i] ))  #last data row
+  print(paste(i, colnames(tidyDFdetail)[i], tidyDFdetail[1, i] ))   #first data row
+}
 
 # Values with specific characteristics
 #table(restData$zipCode %in% c("21212"))
@@ -286,14 +326,14 @@ names(tidyDFdetail)
 #--------------------------------------------------------------------------
 
 #write.csv(tidyDFdetail, file = "TidyDetail.csv")
-write.table(tidyDFdetail, file = "TidyDetail.txt", sep="\t")
+write.table(tidyDFdetail, file = "TidyDetail.txt", sep="\t", row.names=FALSE)
 
 #--------------------------------------------------------------------------
 # 5.  Creates a second, independent tidy data set 
 #     with the average of each variable for each activity and each subject. 
 #--------------------------------------------------------------------------
 load(plyr)
-library("plyr", lib.loc="C:/Users/Bill Killacky/Documents/R/win-library/3.0")
+#library("plyr", lib.loc="C:/Users/Bill Killacky/Documents/R/win-library/3.0")
 
 #tidyDF2 <- ddply(tidyDFdetail, .(Subject, Activity), mutate, numcolwise(mean), sigma=(numcolwise(sd)))
 tidyDF <- ddply(tidyDFdetail, .(Subject, Activity), numcolwise(mean))
@@ -301,6 +341,20 @@ str(tidyDF)
 names(tidyDF)
 tidyDF
 dim(tidyDF)
+length(tidyDF)  #68 columns - subject and activity = 66 columns
+#============================================================
+# prepend field names after Subject and Activity with "Mean."
+#============================================================
+#tidyDF$fcolName) = paste("Mean.", tidyDF$fcolName)
+names(tidyDF)
+for (i in 3:68) {
+  colnames(tidyDF)[i] = paste("Mean.", colnames(tidyDF)[i], sep="")
+}
+names(tidyDF)
+# colnames(trainDF)[1] = "Source"
+# fsub$fcolName = paste('V',fsub$fvID, sep="")
+# colnames(tidyDF2) <- fsub$fvDesc
+
 #write.csv(tidyDF, file = "TidySummary.csv")
-write.table(tidyDF, file = "TidySummary.txt", sep="\t")
+write.table(tidyDF, file = "TidySummary.txt", sep="\t", row.names=FALSE)
 #write.csv(tidyDFdetail, file = "BothTrainTest.txt")
