@@ -10,9 +10,15 @@
 # 4.	Appropriately labels the data set with descriptive activity names. 
 # 5.	Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-rm(m,y,bad,good,u,x)
-setwd("C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData")
-getwd()
+# ASSUMPTION ***
+#
+# Program must be run in the same directory as the input files
+# likewise output tidy files will be written to the same directory as this script/program
+#
+
+#rm(m,y,bad,good,u,x)
+#setwd("C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData")
+#getwd()
 
 # C:/Users/Bill Killacky/Documents/Coursera/GetAndCleanData/data/UCI HAR Dataset/train
 # 3:  X_test.txt, y_test.txt, subject_test.txt
