@@ -46,13 +46,13 @@
 ####Detailed log of operations performed by run_analysis.R script on the data to produce the two tidy data sets.
 
 ###### Read 2 Global Data Files
-*Read in activity_labels file and change column names to "actID", and "ActDesc".
-*Read in features file and change column names to "fvID", and "FvDesc".
+* Read in activity_labels file and change column names to "actID", and "ActDesc".
+* Read in features file and change column names to "fvID", and "FvDesc".
 
 ###### Read in Test data (2947 obs)
-*read in test labels file and change column name to "Y"
-*read in test subject file and change column name to "Subject"
-*read in test data file for columns V1 to V561
+-read in test labels file and change column name to "Y"
+- read in test subject file and change column name to "Subject"
+- read in test data file for columns V1 to V561
 
 ###### Read in Train data (7352 Obs)
 read in test labels file and change column name to "Y"
