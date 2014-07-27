@@ -101,10 +101,12 @@ Section headings detailed later in this codebook:
 	Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+	
 	TidyDetail.txt - Tab delimited file with 10299 rows of data from 30 subjects
 		Only columns having to do with mean or std are included.  
 		(The number of feature vector with time and frequency domain variables were reduced from 561 in the original test and train datasets to 66 for the tidy data sets)
 		Data includes every row of data collected from the accelerometers having merged both test and train data sets.
+	
 	Variable List:
 		Source: indicating whether individual was part of "Train" or "Test" study group.
 		Subject: a number used to identify the subject (person) (range: 1 to 30) for the 30 study participants.
@@ -150,14 +152,19 @@ Section headings detailed later in this codebook:
 	Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+	
 	TidySummary.txt - Tab delimited file with 40 rows of data from 30 subjects 
+	
 	Created by summarizing the TidyDetail.txt data by subject and activity 
 		specifically calculating the mean of all the field measures grouped by Subject and Activity.
+		
+	
 	For example:
 		Subject: 4 Activity: WALKING, mean value of corresponding 66 measure columns.
 		Subject: 4 Activity: WALKING_UPSTAIRS, mean value of corresponding 66 measure columns.
 		Subject: 10 Activity: WALKING_DOWNSTAIRS, mean value of corresponding 66 measure columns.
 		Subject: 10 Activity: WALKING_UPSTAIRS, mean value of corresponding 66 measure columns.
+	
 	Variable List:
 		Subject: a number used to identify the subject (person) (range: 1 to 30) for the 30 study participants.
 		Activity: (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
