@@ -6,12 +6,12 @@
 	What does the analysis file do?
 	The analysis file named "run_analysis.R" is an R script that does the following:
 
-	####1)	Merges the training and the test sets to create one data set.
-	####2)	Extracts only the measurements on the mean and standard deviation for each measurement. 
-	####3)	Uses descriptive activity names to name the activities in the data set
-	####4)	Appropriately labels the data set with descriptive activity names. 
+	1)	Merges the training and the test sets to create one data set.
+	2)	Extracts only the measurements on the mean and standard deviation for each measurement. 
+	3)	Uses descriptive activity names to name the activities in the data set
+	4)	Appropriately labels the data set with descriptive activity names. 
 		Writes this dataframe (10299 rows, 69 variables) to file called "TidyDetail.txt" using tab separated variables format.
-	####5)	Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+	5)	Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 		Write this new dataframe (40 rows, 68 columns) to file called TidySummary.txt using tab separated variables format.
 
 #####Assumption:
@@ -43,7 +43,7 @@
 		summarized by subject and activity with the mean of all the field measures.
 ==================================================================================================================================================
 
-####Detailed log of operations performed on the data to produce the two tidy data sets.	
+####Detailed log of operations performed by run_analysis.R script on the data to produce the two tidy data sets.
 
 ###### Read 2 Global Data Files
 Read in activity_labels file and change column names to "actID", and "ActDesc"
