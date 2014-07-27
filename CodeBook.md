@@ -6,8 +6,8 @@
 
 Section headings detailed later in this codebook:
 ####1. Raw Data Sets - List of all variables, summaries calculated, and units.
-####2. Tidy Data Sets - TidyDetail.txt - List of all variables, summaries calculated, and units.
-####3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
+####2. Tidy Data Set 1 - TidyDetail.txt - List of all variables, summaries calculated, and units.
+####3. Tidy Data Set 2 -  TidySummary.txt - List of all variables, summaries calculated, and units.
 ####4. Study Design.
 
 =====================================================================================
@@ -88,15 +88,25 @@ Section headings detailed later in this codebook:
 		tBodyGyroJerkMean
 =====================================================================================
 
-####2. Tidy Data Sets - TidyDetail.txt - List of all variables and units.
-	Units: 
+####2. Tidy Data Set 1 - TidyDetail.txt - List of all variables and units.
+	######Tidy Data:
+		'''
+1. each variable is in one column.
+2. Each observation is in a different row.
+3. There is one table for each kind of variable (one for Detail, one for Summary).
+4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
+5. There is a row at the top of the file with variable names.
+6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
+7. There is one file per table.
+		'''
+	######Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
-	TidyDetail.txt - Tab delimited file with 10299 rows of data from 30 subjects
-	Only columns having to do with mean or std are included.  
+	######TidyDetail.txt - Tab delimited file with 10299 rows of data from 30 subjects
+		Only columns having to do with mean or std are included.  
 		(The number of feature vector with time and frequency domain variables were reduced from 561 in the original test and train datasets to 66 for the tidy data sets)
-	Data includes every row of data collected from the accelerometers having merged both test and train data sets.
-	Variable List:
+		Data includes every row of data collected from the accelerometers having merged both test and train data sets.
+	######Variable List:
 		Source: indicating whether individual was part of "Train" or "Test" study group.
 		Subject: a number used to identify the subject (person) (range: 1 to 30) for the 30 study participants.
 		Activity: (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
@@ -127,20 +137,30 @@ Section headings detailed later in this codebook:
 		fBodyBodyGyroJerkMag.mean.., fBodyBodyGyroJerkMag.std..
 =====================================================================================
 
-####3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
+####3. Tidy Data Set 2 -  TidySummary.txt - List of all variables, summaries calculated, and units.
 
-	Units: 
+	######Tidy Data:
+		'''
+1. each variable is in one column.
+2. Each observation is in a different row.
+3. There is one table for each kind of variable (one for Detail, one for Summary).
+4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
+5. There is a row at the top of the file with variable names.
+6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
+7. There is one file per table.
+		'''
+	######Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
-	TidySummary.txt - Tab delimited file with 40 rows of data from 30 subjects 
-	Created by summarizing the TidyDetail.txt data by subject and activity 
+	######TidySummary.txt - Tab delimited file with 40 rows of data from 30 subjects 
+	######Created by summarizing the TidyDetail.txt data by subject and activity 
 		specifically calculating the mean of all the field measures grouped by Subject and Activity.
-	For example:
+	######For example:
 		Subject: 4 Activity: WALKING, mean value of corresponding 66 measure columns.
 		Subject: 4 Activity: WALKING_UPSTAIRS, mean value of corresponding 66 measure columns.
 		Subject: 10 Activity: WALKING_DOWNSTAIRS, mean value of corresponding 66 measure columns.
 		Subject: 10 Activity: WALKING_UPSTAIRS, mean value of corresponding 66 measure columns.
-	Variable List:
+	######Variable List:
 		Subject: a number used to identify the subject (person) (range: 1 to 30) for the 30 study participants.
 		Activity: (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
 		Mean.tBodyAcc.mean...X, Mean.tBodyAcc.mean...Y, Mean.tBodyAcc.mean...Z
