@@ -1,17 +1,17 @@
-CodeBook of data collected from the accelerometers of the Samsung Galaxy S smartphone
+###CodeBook of data collected from the accelerometers of the Samsung Galaxy S smartphone
 =====================================================================================
 
 # CODEBOOK
 
 Section headings detailed later in this codebook:
-*1. Raw Data Sets - List of all variables, summaries calculated, and units.
-*2. Tidy Data Sets - TidyDetail.txt - List of all variables, summaries calculated, and units.
-*3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
-*4. Study Design.
+####*1. Raw Data Sets - List of all variables, summaries calculated, and units.
+####*2. Tidy Data Sets - TidyDetail.txt - List of all variables, summaries calculated, and units.
+####*3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
+####*4. Study Design.
 
 =====================================================================================
 
-#1. Raw Data Sets - List of all variables and units.
+####1. Raw Data Sets - List of all variables and units.
 
 	The raw datasets [1] comes from the following publication:
 	[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
@@ -87,7 +87,7 @@ Section headings detailed later in this codebook:
 		tBodyGyroJerkMean
 =====================================================================================
 
-2. Tidy Data Sets - TidyDetail.txt - List of all variables and units.
+####2. Tidy Data Sets - TidyDetail.txt - List of all variables and units.
 	Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
@@ -126,7 +126,7 @@ Section headings detailed later in this codebook:
 		fBodyBodyGyroJerkMag.mean.., fBodyBodyGyroJerkMag.std..
 =====================================================================================
 
-	3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
+####3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
 
 	Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
@@ -170,7 +170,7 @@ Section headings detailed later in this codebook:
 
 	=====================================================================================
 
-4. Study Design
+####4. Study Design
 
 Data was collected by researchers in Genoa, Italy [1]
 
