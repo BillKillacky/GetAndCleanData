@@ -1,13 +1,14 @@
-###CodeBook of data collected from the accelerometers of the Samsung Galaxy S smartphone
-=====================================================================================
 
 # CODEBOOK
 
+###CodeBook of data collected from the accelerometers of the Samsung Galaxy S smartphone
+=====================================================================================
+
 Section headings detailed later in this codebook:
-####*1. Raw Data Sets - List of all variables, summaries calculated, and units.
-####*2. Tidy Data Sets - TidyDetail.txt - List of all variables, summaries calculated, and units.
-####*3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
-####*4. Study Design.
+####1. Raw Data Sets - List of all variables, summaries calculated, and units.
+####2. Tidy Data Sets - TidyDetail.txt - List of all variables, summaries calculated, and units.
+####3. Tidy Data Set -  TidySummary.txt - List of all variables, summaries calculated, and units.
+####4. Study Design.
 
 =====================================================================================
 
@@ -194,8 +195,8 @@ Data was collected by researchers in Genoa, Italy [1]
 	
 	From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
 
-Citation:
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+>Citation:
+>[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 =====================================================================================
 
 ###
