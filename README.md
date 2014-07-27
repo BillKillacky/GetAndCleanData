@@ -1,4 +1,4 @@
-# README.MD
+# README
 
 ###Analysis of data collected from the accelerometers of the Samsung Galaxy S smartphone
 ========================================================================================
@@ -74,13 +74,11 @@
 
 - bind the train dataframe 7352 rows to the test dataframe 2947 rows to create one dataset of 10299 rows.
 
-###### Extracts only the measurements on the mean and standard deviation 
-###### for each measurement. 
--  x <- sqldf("select fvDesc from f where fvDesc like '%-mean()%' or fvDesc like '%-std()%'") 
--  to return 66 matching column names from the 561 column names in the original features file.
+###### Extracts only the measurements on the mean and standard deviation for each measurement. 
+-  x <- sqldf("select fvDesc from f where fvDesc like '%-mean()%' or fvDesc like '%-std()%'") to return 66 matching column names from the 561 column names in the original features file.
 
 - fsub <- f[f$fvDesc %in% x$fvDesc,]
-- fsub$fcolName = paste('V',fsub$fvID, sep="")    # 
+- fsub$fcolName = paste('V',fsub$fvID, sep="") 
 - 		> fsub
 ###### subset of new dataframe for std() and mean() only
 		> fsub
