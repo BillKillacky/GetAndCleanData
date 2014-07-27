@@ -26,7 +26,7 @@
 	3. A dialog box opens, now select the correct directory and file 
 		("TidyDetail.txt" or "TidySummary.txt") and double click or hit "Import" button.
 	4. File type Delimited and hit [Next]
-	5. Delimiters choose Tab (check mark to the left of "Tab") not hit[Next]
+	5. Delimiters choose Tab (check mark to the left of "Tab") now hit[Next]
 	6. Hit [Finish]
 	7. Hit [OK] and the data will be imported to the existing (blank excel worksheet).
 ==================================================================================================================================================
