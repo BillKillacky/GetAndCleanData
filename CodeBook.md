@@ -90,15 +90,13 @@ Section headings detailed later in this codebook:
 
 ####2. Tidy Data Set 1 - TidyDetail.txt - List of all variables and units.
 	######Tidy Data:
-		'''
-1. each variable is in one column.
-2. Each observation is in a different row.
-3. There is one table for each kind of variable (one for Detail, one for Summary).
-4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
-5. There is a row at the top of the file with variable names.
-6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
-7. There is one file per table.
-		'''
+	1. each variable is in one column.
+	2. Each observation is in a different row.
+	3. There is one table for each kind of variable (one for Detail, one for Summary).
+	4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
+	5. There is a row at the top of the file with variable names.
+	6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
+	7. There is one file per table.
 	######Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
@@ -140,15 +138,13 @@ Section headings detailed later in this codebook:
 ####3. Tidy Data Set 2 -  TidySummary.txt - List of all variables, summaries calculated, and units.
 
 	######Tidy Data:
-		'''
-1. each variable is in one column.
-2. Each observation is in a different row.
-3. There is one table for each kind of variable (one for Detail, one for Summary).
-4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
-5. There is a row at the top of the file with variable names.
-6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
-7. There is one file per table.
-		'''
+	1. each variable is in one column.
+	2. Each observation is in a different row.
+	3. There is one table for each kind of variable (one for Detail, one for Summary).
+	4. Two tables can be linked by using the subject and activity but source column was lost when we summarized by subject and activity.
+	5. There is a row at the top of the file with variable names.
+	6. Variable names are human readable (including a prefix of "Mean." to indicated that this table's variable represent a mean of grouped observations).
+	7. There is one file per table.
 	######Units: 
 		The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.
 		The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
