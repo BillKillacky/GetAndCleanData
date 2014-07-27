@@ -77,9 +77,9 @@
 ###### Extracts only the measurements on the mean and standard deviation for each measurement. 
 -  x <- sqldf("select fvDesc from f where fvDesc like '%-mean()%' or fvDesc like '%-std()%'") to return 66 matching column names from the 561 column names in the original features file.
 
-- fsub <- f[f$fvDesc %in% x$fvDesc,]
-- fsub$fcolName = paste('V',fsub$fvID, sep="") 
-- 		> fsub
+		fsub <- f[f$fvDesc %in% x$fvDesc,]
+		fsub$fcolName = paste('V',fsub$fvID, sep="") 
+		
 ###### subset of new dataframe for std() and mean() only
 		> fsub
 			fvID                      fvDesc fcolName
@@ -179,14 +179,13 @@ replace 66 column names with the correct features column names
 
 ######Write this dataframe (10299 rows, 69 variables) to file called "TidyDetail.txt" using tab separated variables format
 
-######Creates a second, independent tidy data set 
-######with the mean of each variable for each activity and each subject. 
--  tidyDF <- ddply(tidyDFdetail, .(Subject, Activity), numcolwise(mean)) 
+######Creates a second, independent tidy data set with the mean of each variable for each activity and each subject. 
+		tidyDF <- ddply(tidyDFdetail, .(Subject, Activity), numcolwise(mean)) 
 
 ###### prepend field names after Subject and Activity with "Mean."
-	for (i in 3:68) {
-		colnames(tidyDF)[i] = paste("Mean.", colnames(tidyDF)[i], sep="")
-	}
+		for (i in 3:68) {
+			colnames(tidyDF)[i] = paste("Mean.", colnames(tidyDF)[i], sep="")
+		}
 
 ###### Write this dataframe (40 rows, 68 columns) to file called TidySummary.txt using tab separated variables format
 
