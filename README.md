@@ -50,38 +50,38 @@
 * Read in features file and change column names to "fvID", and "FvDesc".
 
 ###### Read in Test data (2947 obs)
--read in test labels file and change column name to "Y"
+- read in test labels file and change column name to "Y"
 - read in test subject file and change column name to "Subject"
 - read in test data file for columns V1 to V561
 
 ###### Read in Train data (7352 Obs)
-read in test labels file and change column name to "Y"
-read in train subject file and change column name to "Subject"
-read in train data file for columns V1 to V561
+- read in test labels file and change column name to "Y"
+- read in train subject file and change column name to "Subject"
+- read in train data file for columns V1 to V561
 
 ###### Uses descriptive activity names to name the activities in the data set
 
 ###### provide meaning actions for action IDs
-merge test labels with activity labels to get 2947 rows with meaningful activity labels in the data by matching up labels Y with activity labels actID. 
-merge train labels with activity labels to get 7352 rows with meaningful activity labels in the data by matching up labels Y with activity labels actID. 
-Create a "Source" column ("train" or "test") with the correct of number of rows matching the test and train data sets
+- merge test labels with activity labels to get 2947 rows with meaningful activity labels in the data by matching up labels Y with activity labels actID. 
+- merge train labels with activity labels to get 7352 rows with meaningful activity labels in the data by matching up labels Y with activity labels actID. 
+- Create a "Source" column ("train" or "test") with the correct of number of rows matching the test and train data sets
 
 ###### put together columns
-Create a test data frame with Source column, Subject identifier, Activity, and the 561 data measures for all 2947 rows
-Create a train data frame with Source column, Subject identifier, Activity, and the 561 data measures for all 7352 rows
+- Create a test data frame with Source column, Subject identifier, Activity, and the 561 data measures for all 2947 rows
+- Create a train data frame with Source column, Subject identifier, Activity, and the 561 data measures for all 7352 rows
 
 ###### Merges the training and the test sets to create one data set.
 
-bind the train dataframe 7352 rows to the test dataframe 2947 rows to create one dataset of 10299 rows.
+- bind the train dataframe 7352 rows to the test dataframe 2947 rows to create one dataset of 10299 rows.
 
 ###### Extracts only the measurements on the mean and standard deviation 
 ###### for each measurement. 
-###### x <- sqldf("select fvDesc from f where fvDesc like '%-mean()%' or fvDesc like '%-std()%'") 
-###### to return 66 matching column names from the 561 column names in the original features file.
+-  x <- sqldf("select fvDesc from f where fvDesc like '%-mean()%' or fvDesc like '%-std()%'") 
+-  to return 66 matching column names from the 561 column names in the original features file.
 
-> fsub <- f[f$fvDesc %in% x$fvDesc,]
-fsub$fcolName = paste('V',fsub$fvID, sep="")    # 
-		> fsub
+- fsub <- f[f$fvDesc %in% x$fvDesc,]
+- fsub$fcolName = paste('V',fsub$fvID, sep="")    # 
+- 		> fsub
 ###### subset of new dataframe for std() and mean() only
 		> fsub
 			fvID                      fvDesc fcolName
@@ -179,17 +179,16 @@ replace 66 column names with the correct features column names
 		[64] "fBodyBodyAccJerkMag.mean.."  "fBodyBodyAccJerkMag.std.."   "fBodyBodyGyroMag.mean.."    
 		[67] "fBodyBodyGyroMag.std.."      "fBodyBodyGyroJerkMag.mean.." "fBodyBodyGyroJerkMag.std.." 
 
-Write this dataframe (10299 rows, 69 variables) to file called "TidyDetail.txt" using tab separated variables format
+######Write this dataframe (10299 rows, 69 variables) to file called "TidyDetail.txt" using tab separated variables format
 
-###### Creates a second, independent tidy data set 
-###### with the mean of each variable for each activity and each subject. 
-###### tidyDF <- ddply(tidyDFdetail, .(Subject, Activity), numcolwise(mean)) 
+######Creates a second, independent tidy data set 
+######with the mean of each variable for each activity and each subject. 
+-  tidyDF <- ddply(tidyDFdetail, .(Subject, Activity), numcolwise(mean)) 
 
 ###### prepend field names after Subject and Activity with "Mean."
-for (i in 3:68) {
-  colnames(tidyDF)[i] = paste("Mean.", colnames(tidyDF)[i], sep="")
-}
-
+	for (i in 3:68) {
+		colnames(tidyDF)[i] = paste("Mean.", colnames(tidyDF)[i], sep="")
+	}
 
 ###### Write this dataframe (40 rows, 68 columns) to file called TidySummary.txt using tab separated variables format
 
